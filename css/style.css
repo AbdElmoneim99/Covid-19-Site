@@ -1,0 +1,555 @@
+@import url("animate.css");
+@import url("bootstrap.min.css");
+@import url("font.css");
+
+:root {
+  --text-color: #035755;
+  --p-color: #4b4f51;
+  --title-color: #fa5652;
+  font-size: 11px;
+}
+
+@font-face {
+  font-family: main;
+  src: url(../Fonts/RedHatDisplay-Bold.ttf);
+}
+@font-face {
+  font-family: second;
+  src: url(../Fonts/Gelion\ Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-bottom: 0px;
+}
+svg,
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: visible;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--title-color);
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: 40%;
+    top: 98%;
+    background-color: #fa5652;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+}
+nav {
+  z-index: 500;
+  font-family: "second";
+  font-size: 1.8rem;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .btn {
+    font-family: "second";
+    font-size: 1.5rem;
+  }
+  .nav-link {
+    color: var(--text-color);
+    margin: auto 7px;
+  }
+  .navbar-toggler-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.threelines {
+  display: none;
+  flex-direction: column;
+  gap: 7px;
+  cursor: pointer;
+  margin-top: 0px;
+  transition: all 0.2s ease;
+  rotate: 0deg;
+}
+.threelines:hover {
+  rotate: 270deg;
+}
+.threelines .line {
+  width: 30px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: fit-content;
+  width: 84%;
+  h2 {
+    color: var(--title-color);
+    font-family: "main";
+    font-size: 2.7rem;
+  }
+  h1 {
+    color: var(--text-color);
+    font-family: "main";
+    font-size: 4.3rem;
+  }
+  p {
+    color: var(--p-color);
+    font-family: "second";
+    font-size: 2rem;
+  }
+  .btn {
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    z-index: 500;
+    p {
+      color: #ffffff;
+      font-family: "second";
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 50;
+    }
+    svg {
+      fill: var(--title-color);
+      position: absolute;
+      inset: 0;
+      left: -60%;
+
+      z-index: 49;
+      transition: all 10s ease-in;
+      display: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #035755;
+      z-index: 1;
+      width: 0%;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+      svg {
+        left: 60%;
+        top: 5%;
+        display: block;
+        animation-name: btn-motion;
+        animation-duration: 2s;
+        animation-iteration-count: unset;
+      }
+    }
+  }
+}
+
+.text- {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: fit-content;
+  width: 84%;
+  position: relative;
+  h2 {
+    color: var(--title-color);
+    font-family: "main";
+    font-size: 3.8rem;
+    position: absolute;
+    left: -11.5%;
+  }
+  h1 {
+    color: var(--text-color);
+    font-family: "second";
+    font-size: 4rem;
+    font-weight: 600;
+  }
+  p {
+    color: var(--p-color);
+    font-family: "second";
+    font-size: 2rem;
+  }
+  .btn {
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    p {
+      color: #ffffff;
+      font-family: "second";
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 50;
+    }
+    svg {
+      fill: var(--title-color);
+      position: absolute;
+      inset: 0;
+      left: -60%;
+
+      z-index: 49;
+      transition: all 10s ease-in;
+      display: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #035755;
+      z-index: 1;
+      width: 0%;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+      svg {
+        left: 60%;
+        top: 5%;
+        display: block;
+        animation-name: btn-motion;
+        animation-duration: 2s;
+        animation-iteration-count: unset;
+      }
+    }
+  }
+}
+
+@keyframes btn-motion {
+  0% {
+    left: 50%;
+    transform: scale(2) rotateZ(0deg);
+  }
+
+  90% {
+    left: -60%;
+    transform: scale(3) rotateZ(100deg);
+  }
+  100% {
+    transform: scale(0);
+    left: -100%;
+  }
+}
+
+.text.i {
+  align-items: center;
+}
+@media screen and (max-width: 450px) {
+  :root {
+    font-size: 6px;
+  }
+}
+.svg-1,
+.svg-2 {
+  top: 50%;
+  left: 50%;
+  z-index: -5;
+
+  animation-name: virus-motion;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+.svg-2 {
+  width: 80px;
+  top: 50%;
+  left: 10%;
+}
+.svg-5 {
+  width: 10rem;
+  top: 40%;
+  left: -6%;
+  opacity: 0.3;
+  z-index: -5;
+  fill: #035755;
+}
+.card {
+  width: 32rem;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 91%;
+    left: 50%;
+    background: var(--title-color);
+    width: 0%;
+    height: 10%;
+    z-index: -5;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    &::after {
+      left: 0%;
+      width: 100%;
+    }
+  }
+
+  .card-title {
+    color: var(--text-color);
+    font-family: "second";
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .card-text {
+    color: var(--p-color);
+    font-family: "second";
+    font-size: 1.5rem;
+  }
+}
+.live-reports {
+  .report-text {
+    h3 {
+      color: var(--text-color);
+      font-family: "second";
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+  }
+  .countries {
+    .usa {
+      align-items: center;
+      .flag {
+        width: 2.9rem;
+      }
+      h3 {
+        color: var(--text-color);
+        font-family: "second";
+        font-weight: 600;
+      }
+      svg {
+        width: 2.5rem;
+      }
+    }
+  }
+}
+.qu {
+  .text {
+    h1 {
+      line-height: 1.5;
+    }
+  }
+  input {
+    border: 0;
+    &:focus {
+      outline: none;
+      color: var(--text-color);
+      font-size: 1.5rem;
+    }
+  }
+}
+
+footer {
+  li {
+    font-family: "second";
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .social {
+    .social-icon {
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+    display: none;
+  }
+  .text- {
+    width: 100%;
+    h2 {
+      left: -11.5%;
+    }
+  }
+  .qu {
+    .text {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  footer {
+    .logo-img {
+      width: 30%;
+    }
+    .social {
+      width: 30%;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .text- {
+    width: 100%;
+    h2 {
+      left: -13%;
+    }
+  }
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+#Girl {
+  translate: 0px -5px;
+  animation-name: girl-motion;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes girl-motion {
+  0% {
+    translate: 0px 0px;
+  }
+
+  50% {
+    translate: 0px -7px;
+  }
+
+  100% {
+    translate: 0px 0px;
+  }
+}
+/* hair g340,g156 */
+#g340,
+#g344 {
+  rotate: y 0deg;
+  animation-name: hair-motion;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  translate: 0px 0px;
+}
+@keyframes hair-motion {
+  0% {
+    rotate: y 0deg;
+    translate: 0px 0px;
+  }
+
+  50% {
+    translate: 9px -25px;
+    rotate: z 2.5deg;
+  }
+
+  100% {
+    translate: 0px 0px;
+    rotate: y 0deg;
+  }
+}
+/* scarf  g236*/
+#g236,
+#g268,
+#g264,
+#g260,
+#g256,
+#g252,
+#g248,
+#g244,
+#g240,
+#g220,
+#g216,
+#g212,
+#g208,
+#g204,
+#g200,
+#g196 {
+  rotate: y 0deg;
+  transform-origin: 60% 33%;
+
+  animation-name: scarf-motion;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes scarf-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+  95% {
+    transform: rotate(-0.2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* eye g316 g280 */
+#g316,
+#g280 {
+  transform: skewX(1deg);
+  animation-name: eye-motion;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+@keyframes eye-motion {
+  0% {
+    transform: skewX(1deg);
+  }
+
+  50% {
+    transform: skewX(0.5deg);
+  }
+  95% {
+    transform: skew(1.2deg);
+  }
+  100% {
+    transform: skewX(1deg);
+  }
+}
+
+/* -------------Virus--------------- */
+#path216_2,
+#path216_3 {
+  transform: rotate(0deg);
+  transform-origin: length;
+  animation-name: virus-motion;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+}
+#path216_3 {
+  transform: rotate(190deg);
+  transform-origin: 95% 20%;
+  animation-name: virus-motion;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+@keyframes virus-motion {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
